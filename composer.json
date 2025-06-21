@@ -1,0 +1,20 @@
+{
+    "name": "apidocgenerator/apidocgenerator",
+    "description": "这是一个php注释自动生成api的包",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.2" 
+    },
+    "autoload": {
+        "psr-4": {
+            "Apidocgenerator\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "kontirol",
+            "email": "whoami324@qq.com"
+        }
+    ]
+}
