@@ -89,13 +89,16 @@ class ApiDocGenerator
             }
             $result['params'] = $params;
         }
-        if (preg_match('/@response\s+(\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\})/s', $docBlock, $match)) {
-            $jsonResponse = trim($match[1]);
-            $decoded = json_decode($jsonResponse, true);
-            if ($decoded === null) {
-                throw new \Exception("无效的JSON格式: " . $jsonResponse);
-            }
-            $result['response'] = $decoded;
+        // if (preg_match('/@response\s+(\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\})/s', $docBlock, $match)) {
+        //     $jsonResponse = trim($match[1]);
+        //     $decoded = json_decode($jsonResponse, true);
+        //     if ($decoded === null) {
+        //         throw new \Exception("无效的JSON格式: " . $jsonResponse);
+        //     }
+        //     $result['response'] = $decoded;
+        // }
+        if (preg_match('/@response\s+(.*)/', $docBlock, $match)) {
+            $result['response'] = json_decode(trim($match[1]));
         }
         return $result;
     }
