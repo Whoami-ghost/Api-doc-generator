@@ -3,7 +3,7 @@
 这是一个从PHP控制器注释生成API文档的工具库，通过解析代码中的特定注释标签，自动生成JSON格式的API文档。
 
 ## 安装
-composer require kontirol/api-doc-generator
+composer require apidocgenerator/apidocgenerator
 ## 使用方法
 
 在你的PHP代码中引入并使用：
